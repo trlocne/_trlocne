@@ -1,7 +1,6 @@
 ---
-title: Guidelines
+title: Machine Learning
 type: docs
-prev: docs/systems/leaf
 sidebar:
   open: true
 ---

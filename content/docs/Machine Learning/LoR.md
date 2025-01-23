@@ -1,7 +1,6 @@
 ---
-title: Scripting Reference
+title: Linear Regression
 type: docs
-prev: docs/systems/leaf
 sidebar:
   open: true
 ---

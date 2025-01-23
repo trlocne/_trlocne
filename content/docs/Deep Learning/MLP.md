@@ -1,7 +1,7 @@
 ---
-title: Design Tool Reference
+title: MultiLayer Perceptron
 type: docs
-prev: docs/systems/leaf
+weight: 2
 sidebar:
   open: true
 ---

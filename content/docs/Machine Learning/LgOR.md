@@ -1,7 +1,6 @@
 ---
-title: 3.1 Model Viewer
+title: Logistic Regression
 type: docs
-prev: docs/systems/leaf
 sidebar:
   open: true
 ---

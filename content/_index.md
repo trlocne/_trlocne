@@ -1,23 +1,18 @@
 ---
-title: Firedreamer Developer and Modding Documentation
 toc: false
 ---
-![Causality Engine](/images/causalitylogo.png)
+<div style="text-align: center;">
+  <img src="/images/avatar.jpg" alt="Avatar" style="border-radius: 50%; width: 150px; height: 150px;" />
+</div>
+
 ## Main Page
-Welcome to the Developer and Modding Documentation site for Firedreamer's Causality Engine. Consider this a living help file where you'll find everything related to the processes
-at Firedreamer, guidelines, and how to use the modding/developer tools.
+Welcome to the study resources and personal projects page of @tr.locne. Here, you'll find a collection of my projects, notes, and insights gathered throughout my learning journey. This space serves as a comprehensive record of my academic and personal growth, showcasing my work, ideas, and progress. In addition to these resources, the page also provides some essential information about me, giving you a deeper understanding of who I am, my interests, and my approach to learning. Feel free to explore and get a glimpse into my world of knowledge and creativity!
 
 ## Explore
 Pretty much everything you need to know falls in one of these categories.
 {{< cards >}}
-  {{< card link="docs/causaleddy" title="Design Tool Reference" subtitle="Options exposed to designers; how-to's for using the modding tools to implement game content like NPCs, maps and more." icon="map" >}}
-  {{< card link="docs/guidelines" title="Guidelines" subtitle="Specific requirements for files, the game's tree structure, relevant tags and file encoding formats, and technical limitations." icon="library" >}}  
-  {{< card link="docs/scripting" title="Scripting Reference" subtitle="Using the scripting system to set up character interactions, world events, and direct narrative sequences." icon="code" >}}
-  {{< card link="docs/systems" title="Systems" subtitle="Detailed information about all the game systems. Here you will find info on topics such as the game loop, NPC behaviors, questing etc." icon="chip" >}}
-{{< /cards >}}
-
-## Glossary
-Need to know what specific terms or words mean? Check out the Glossary.
-{{< cards >}}
-  {{< card link="docs/systems" title="Systems" subtitle="Detailed information about all the game systems. Here you will find info on topics such as the game loop, NPC behaviors, questing etc." icon="chip" >}}
+  {{< card link="about" title="About" subtitle="The About section provides an overview of who I am, my background, interests, and the goals that drive my learning and personal growth" icon="home" >}}
+  {{< card link="project" title="Project" subtitle="The Projects section showcases my personal and academic projects, highlighting the skills, creativity, and effort I’ve put into each one." icon="document" >}}  
+  {{< card link="blog" title="Blog" icon="folder" subtitle="The Blog section is where I share my thoughts, experiences, and reflections on various topics, offering insights into my learning process and personal growth."  >}}
+  {{< card link="docs" title="Documents" subtitle="The Documents section contains a collection of important notes, study materials, and resources that support my learning and project development." icon="code" >}}
 {{< /cards >}}

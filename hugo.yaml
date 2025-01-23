@@ -1,5 +1,5 @@
 # Hugo configuration file
-title: Firedreamer Developer and Modding Documentation
+title: ./trlocne
 
 # import hextra as module
 theme: hextra
@@ -16,21 +16,37 @@ markup:
 
 menu:
   main:
-    - name: Docs
+    - identifier: documentation
+      name: Documentation
       pageRef: /docs
       weight: 1
-    - name: Search
+    - identifier: project
+      name: Project
+      pageRef: /project
       weight: 2
+    - identifier: blog
+      name: Blog
+      pageRef: /blog
+      weight: 3
+    - identifier: about
+      name: About
+      pageRef: about
+      weight: 4
+    - name: Search
+      weight: 5
       params:
         type: search
+    - name: GitHub
+      weight: 6
+      url: "https://github.com/trlocne"
+      params:
+        icon: github
 
 
 params:
-  
-      
   navbar:
     displayTitle: true
-    displayLogo: true
+    displayLogo: false
     logo:
       path: images/logo.svg
       dark: images/logo-dark.svg

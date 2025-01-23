@@ -4,7 +4,7 @@ toc: false
 ---
 
 <div style="text-align: center;">
-  <img src="/static/images/avatar.jpg" alt="Avatar" style="border-radius: 50%; width: 150px; height: 150px;" />
+  <img src="https://github.com/trlocne/_trlocne/blob/main/static/images/avatar.jpg?raw=true" alt="Avatar" style="border-radius: 50%; width: 150px; height: 150px;" />
   <h1> Trần Văn Lộc </h1>
 </div>
 

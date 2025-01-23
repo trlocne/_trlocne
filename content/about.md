@@ -20,4 +20,4 @@ I am currently studying and looking for an internship or entry-level position in
 ## Education
 **Ho Chi Minh City University of Technology - VNUHCM**  
 Bachelor of Engineering in Computer Science  
-Sep 2022 – Present
+Sep 2022 - Present

@@ -61,5 +61,4 @@ params:
   editURL:
     enable: true
     base: "https://github.com/team-firedreamer/causality-docs/edit/main/content"
-
   

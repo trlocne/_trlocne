@@ -10,7 +10,6 @@ tags:
   - Mạng máy tính
   - HCMUT
   - HK242
-excludeSearch: true
 math: true
 ---
 

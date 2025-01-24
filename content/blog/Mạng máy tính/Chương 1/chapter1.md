@@ -27,25 +27,25 @@ Hàng tỷ thiết bị (devices) điện toán được kết nối:
 - host = end system
 - chạy các ứng dụng mạng ở “Internet edge”
 
-![image.png](image%201.png)
+![image.png](image 1.png)
 
 Packet switches: forward packets (chunks of data) routers, switches
 
 → Ngày xưa ngta phân routers và switches riêng biệt nhưng ngày nay thường các hệ thốn gộp hai cái đó lại nếu user muốn sử dụng cái nào thì chỉ cần cấu hình cái đó ra thôi.
 
-![image.png](image%202.png)
+![image.png](image 2.png)
 
 Communication links: fiber, copper, radio, satellite
 
 transmission rate: bandwidth (đánh giá tốc độ mạng nó chỉ mang tính chất tương đối)
 
-![image.png](image%203.png)
+![image.png](image 3.png)
 
 Networks:  collection of devices, routers/switches, links: managed by an organization
 
-![image.png](image%204.png)
+![image.png](image 4.png)
 
-![image.png](image%205.png)
+![image.png](image 5.png)
 
 Internet: “network of networks” các ISPs (ISPs là các nhà cung cấp mạng như viettel, vinaphone, … nó sẽ có các hạ tầng khác nhau nhưng mà nó phải giao tiếp chung được với nhau) kết nối với nhau
 
@@ -66,44 +66,44 @@ teleconferencing, email, games, ecommerce, social media, interconnected applianc
 
 Các protocolsare xác định định dạng, thứ tự của các message được gửi và nhận giữa các thực thể mạng và các hành động được thực hiện khi truyền, nhận tin nhắn.
 
-![image.png](image%206.png)
+![image.png](image 6.png)
 
 # 2. Network edge: hosts, access network, physical media
 
 - Network edge: hosts: clients and servers , servers often in data centers (hiện nay thường là clouds)
 - client và server chỉ là vai trò của thiết bị.
 
-![image.png](image%207.png)
+![image.png](image 7.png)
 
 - Access networks, physical media:  wired, wireless communication links
 - Quan tâm kết nối thế nào trên đường tuy cập
 
-![image.png](image%208.png)
+![image.png](image 8.png)
 
 - Network core: interconnected routers, network of networks
 
-![image.png](image%209.png)
+![image.png](image 9.png)
 
 # 3. Access networks
 
 - ***Cable-based access***
     
     
-    ![image.png](image%2010.png)
+    ![image.png](image 10.png)
     
-    ![image.png](image%2011.png)
+    ![image.png](image 11.png)
     
     Dây cáp quang được sử dụng với tốc độ downstream: 40 Mbps - 1.2 Gbs và tốc độ upstream: 30 - 100 Mbps.
     
 - ***Digital subscriber line (DSL)***
     
-    ![image.png](image%2012.png)
+    ![image.png](image 12.png)
     
     Downstream với tốc độ: 24-52Mbps và Upstream với tốc độ: 3.5-16Mbps.
     
 - ***Home networks***
     
-    ![image.png](image%2013.png)
+    ![image.png](image 13.png)
     
     Wireless access networks
     
@@ -119,7 +119,7 @@ Các protocolsare xác định định dạng, thứ tự của các message đ�
     
 - **Enterprise networks**
     
-    ![image.png](image%2014.png)
+    ![image.png](image 14.png)
     
     Chi phí làm switch sẽ ít tốn hơn so với route nên phân chia các chức năng ngta thường sử dụng switch.
     
@@ -143,7 +143,7 @@ Các protocolsare xác định định dạng, thứ tự của các message đ�
             - UTP (không có vỏ bảo vệ)
             - STP (có giấy bạc (thiếc) bảo vệ → chống nhiễu tốt hơn → tin cậy hơn)
         
-        ![image.png](image%2015.png)
+        ![image.png](image 15.png)
         
     - **Có hướng - Cáp đồng trục (Coaxial Cable)**
         
@@ -153,7 +153,7 @@ Các protocolsare xác định định dạng, thứ tự của các message đ�
         - Ngoài cùng có vỏ bọc cách điện
         - Giá thành cao, tốc độ cao
         
-        ![image.png](image%2016.png)
+        ![image.png](image 16.png)
         
     - **Có hướng - Cáp quang (Fiber Optic)**
         
@@ -162,7 +162,7 @@ Các protocolsare xác định định dạng, thứ tự của các message đ�
         - Giá thành cao
         - Tốc độ cao, tỉ lệ lỗi bit thấp, độ suy hào rất nhỏ.
         
-        ![image.png](image%2017.png)
+        ![image.png](image 17.png)
         
     - **Không hướng – Môi trường không dây (wireless)**
         - Truyền thông tin trên các dải tần khác nhau của sóng điện từ
@@ -194,7 +194,7 @@ Các protocolsare xác định định dạng, thứ tự của các message đ�
     
     Toàn bộ băng thông được chia sẽ cho tất cả mọi người. Nếu còn băng thông, ai cũng có thể sử dụng.
     
-    ![image.png](image%2018.png)
+    ![image.png](image 18.png)
     
     - ***Cách chuyển:***
         - Dữ liệu được chia sẽ thành các gói tin (package) bao gồm: Tiêu đề (Header) [ Địa chỉ, số thứ tự ] và dữ liệu (playload)
@@ -217,17 +217,17 @@ Các protocolsare xác định định dạng, thứ tự của các message đ�
     
     Tài nguyên được gán riêng cho mỗi kênh, kể cả tài nguyên của các kênh đó đang rỗi người khác cũng không được dùng.
     
-    ![image.png](image%2019.png)
+    ![image.png](image 19.png)
     
     - *Trên mỗi thiết bị chuyển mạch*
         - **Ghép kênh:** gửi dữ liệu của nhiều kênh trên cùng liên kết vật lý.
             - Theo thời gian (TDM): sử dụng tài nguyên trong khe theo thời gian được phân.
                 
-                ![image.png](image%2020.png)
+                ![image.png](image 20.png)
                 
             - Theo tần số (FDM): sử dụng một băng tần tín hiệu riêng.
                 
-                ![image.png](image%2021.png)
+                ![image.png](image 21.png)
                 
         - **Phân kênh**
             - phân dữ liệu nhận được trên liên kết vật lý vào các kênh tương ứng và chuyển đến đúng đích.
@@ -248,7 +248,7 @@ Các protocolsare xác định định dạng, thứ tự của các message đ�
     
     Mạng lõi: đường truyền, thiết bị kết nối, mạng khu vực (Regional Net), trạm chuyển tiếp của nhà cung cấp (ISP), trạm trung chuyển Internet (IXP),…
     
-    ![image.png](image%2022.png)
+    ![image.png](image 22.png)
     
 
 # 6. Performance: loss, delay, throughput
@@ -276,11 +276,11 @@ Các protocolsare xác định định dạng, thứ tự của các message đ�
     ▪ La/R -> 1: avg. queueing delay large
     ▪ La/R > 1: more “work” arriving is more than can be serviced - average delay infinite!
     
-    ![image.png](image%2023.png)
+    ![image.png](image 23.png)
     
     - Trễ khứ hồi (Round Trip Time = 𝑡3 − 𝑡0)
         
-        ![image.png](image%2024.png)
+        ![image.png](image 24.png)
         
     - MTU (Maximum Transmission Unit): kích thước tối đa của gói tin có thể truyền VD
         
@@ -323,13 +323,13 @@ Các protocolsare xác định định dạng, thứ tự của các message đ�
     from compromised
     hosts
     
-    ![image.png](image%2025.png)
+    ![image.png](image 25.png)
     
 - **packet interception**
     - Xảy ra trên các phương tiện truyền phát (Ethernet chia sẻ, mạng không dây).
     - Giao diện mạng ở chế độ promiscuous có thể đọc và ghi lại tất cả các gói tin (bao gồm cả mật khẩu) đi qua.
     
-    ![image.png](image%2026.png)
+    ![image.png](image 26.png)
     
     Phầm mềm **Wireshark** sử dụng để mở gửi chỉnh sử gói tin
     
@@ -337,7 +337,7 @@ Các protocolsare xác định định dạng, thứ tự của các message đ�
     
     IP spoofing: send packet with false source address
     
-    ![image.png](image%2027.png)
+    ![image.png](image 27.png)
     
 
 # 8. Kiến trúc phân tầng:

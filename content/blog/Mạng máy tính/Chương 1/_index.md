@@ -21,8 +21,6 @@ Môn học: Mạng máy tính - Trường đại học Bách Khoa TP.HCM.
 
 ![figure 1: Overview computer network](image.png)
 
-figure 1: Overview computer network
-
 Hàng tỷ thiết bị (devices) điện toán được kết nối: 
 
 - host = end system

@@ -65,18 +65,18 @@ Quá trình huấn luyện bao gồm tối ưu hóa các trọng số của mô 
 
 - ***Linear Regression***
 
-  ![alt text](images/SoR1.png)
+  ![alt text](SoR1.png)
   Trong bài toán Linear Regression chúng ta sử dụng một đường tuyến tính để dự đoán. Việc dự đoán được cho là tốt khi hàm loss của nó đặt mức tối thiểu và chấp nhận được. Bài toán linear regression phù hợp với bài toán hồi quy, vậy còn bài toán phân loại thì sao ?
 
   Chúng ta thử xem với bài toán phân loại nhị phân trong hồi quy tuyến tính:
 
-  ![alt text](images/SoR2.png)
+  ![alt text](SoR2.png)
 
   Chúng ta có thể thấy bài toán phân loại nhị phân trong mô hình hồi quy tuyến tính hoạt động không tốt. Vì vậy có một giải pháp khác được sử dụng để phân loại nhị phân tốt hơn đó là Logistics Regression.
 
 - ***Logistics Regression***
   
-  ![alt text](images/SoR3.png)
+  ![alt text](SoR3.png)
 
   Mô hình Logistics Regression có vẻ giải quyết tốt cho bài toán phân loại nhị phân, nhưng nó có thể giải quyết được bài toán phân loại đa lớp hay không ?
 
@@ -106,13 +106,13 @@ Ví dụ, nếu ta có dữ liệu một cột là `"Sài Gòn", "Huế", "Hà N
 
 ### 3.2. Softmax
 
-![alt text](images/SoR4.png)
+![alt text](SoR4.png)
 
 Thay vì sử dụng xác suất để tính tỉ lệ phần trăm giữa các giá trị đầu ra. Chúng ta sẽ sài Softmax, bởi softmax có khả năng tính tỉ lệ % đối với các giá trị âm.
 
 Ví dụ nếu output của chúng ta là [2, 3] thì dễ dàng có thể suy ra được xác suất bình thường là [0.4, 0.6] nhưng giả sử chúng ta có [-2, 3] chúng ta không thể tính xác suất cho cặp này. Vì vậy chúng ta phải sử dụng `softmax function`.
 
-![alt text](images/SoR5.png)
+![alt text](SoR5.png)
 
 Khi một trong các $z_i$ quá lớn, việc tính toán $e^{z_i}$ có thể gây ra hiện tượng tràn số (overflow) như hình trên, ảnh hưởng lớn tới kết quả của hàm softmax. Có một cách khắc phục hiện tượng này bằng cách dựa trên quan sát sau:
 
@@ -151,13 +151,158 @@ $$(node\_input + 1) * node\_output$$
 
 Nếu có bias thì có `+1` còn không có thì không cần cộng.
 
-### 3.4. Cross-Entropy Loss.
+### 3.4. Cross-Entropy
+Cross entropy giữa hai phân phối p và q được định nghĩa là:
+
+$$H(\mathbf{p}, \mathbf{q}) = \mathbf{E_p}[-\log \mathbf{q}]$$
+
+với $\mathbf{p}$ và $\mathbf{q}$ rời rạc, công thức có thể được viết dưới dạng:
+
+$$ H(\mathbf{p}, \mathbf{q}) =-\sum_{i=1}^C p_i \log q_i ~~~ (1)$$
+
+Để hiểu rõ hơn ưu điểm của hàm cross entropy và hàm bình phương khoảng cách thông thường, chúng ta cùng xem Hình 4 dưới đây. Đây là ví dụ trong trường hợp C = 2 và $p_{1}$ lần lượt nhận các giá trị 0.5, 0.1 và 0.8.
+
+![alt text](image-4.png)
+
+**Nhận xét:**
+
++ Giá trị nhỏ nhất của cả hai hàm số đạt được khi $\mathbf{p} = \mathbf{q}$ tại hoành độ của các điểm màu xanh lục.
++ Quan trọng hơn, hàm cross entropy nhận giá trị rất cao (tức loss rất cao) khi q ở xa p. Trong khi đó, sự chênh lệch giữa các loss ở gần hay xa nghiệm của hàm bình phương khoảng cách 
+$(q − p)^2$ là không đáng kể. Về mặt tối ưu, hàm cross entropy sẽ cho nghiệm gần với p hơn vì những nghiệm ở xa bị trừng phạt rất nặng.
+
+Trong Logistic Regression, chúng ta cũng có hai phân phối đơn giản.
+
+(i) Đầu ra thực sự của điểm dữ liệu đầu vào $x_i$ có phân phối xác suất là $[y_i;1−y_i]$ với $y_i$ là xác suất để điểm dữ liệu đầu vào rơi vào class thứ nhất (bằng 1 nếu $y_i=1$, bằng 0 nếu 
+$y_i = 0$.
+
+(ii) Đầu ra dự đoán của điểm dữ liệu đó là $a_i = \text{sigmoid}(\mathbf{w}^T\mathbf{x})$ là xác suất để điểm đó rơi vào class thứ nhất. Xác suất để điểm đó rơi vào class thứ hai có thể được dễ dàng suy ra là $1 - a_i$. Vì vậy, hàm mất mát trong Logistic Regression:
+
+$$J(\mathbf{w}) = -\sum_{i=1}^N(y_i \log {a}_i + (1-y_i) \log (1 - {a}_i))$$
+
+chính là một trường hợp đặc biệt của Cross Entropy.
+
+Với Softmax Regression, trong trường hợp có C classes, loss giữa đầu ra dự đoán và đầu ra thực sự của một điểm dữ liệu $x_i$ được tính bằng:
+
+$$J(\mathbf{W};\mathbf{x}_i, \mathbf{y}_i) = -\sum_{j=1}^C y_{ji}\log(a_{ji})$$
+
+Với $y_{ji}$ và $a_{ji}$ lần lượt là là phần tử thứ j của vector (xác suất) $y_{i}$ và $a_{i}$
+. Nhắc lại rằng đầu ra $a_{i}$ phụ thuộc vào đầu vào $x_{i}$ và ma trận trọng số W.
+
+
+### 3.4. Design Softmax Regression.
 
 Để huấn luyện mô hình Softmax Regression, ta sử dụng hàm mất mát Cross-Entropy, một độ đo độ sai khác giữa phân phối dự đoán của mô hình và phân phối thực tế.
 
-Trong các ví dụ tiếp theo sẽ sử dụng mô tả cua model như sau:
+Trong các ví dụ tiếp theo sẽ sử dụng mô tả của model như sau:
 
 ![alt text](image-2.png)
 
+ta có hàm loss của ví dụ trên như sau:
+![alt text](image-5.png)
+
+Chúng ta lại sử dụng Stochastic Gradient Descent (SGD) ở đây để cập nhật các tham số cho mô hình.
 ![alt text](image-3.png)
 
+Đầu tiên chúng ta đi ngược hướng sử dụng `chain rule` để tính theo hướng backward. lần dượt tình đạo hàm như sau.
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
+Thế ảnh trên vào ảnh dưới ta được như sau:
+
+![alt text](image-8.png)
+
+Tiếp tục ta sẽ đạo hàm theo các param trong mô hình, tương tự như các bài logicstics và linear. Ta sẽ thu được như sau:
+
+![alt text](image-9.png)
+
+## 4. Summary
+
+![alt text](image-10.png)
+
+## 5. Question
+
+{{% details title="Softmax Regression là gì?" %}}
+
+Softmax Regression (hay còn gọi là Multinomial Logistic Regression) là một thuật toán học máy có giám sát dành cho các bài toán phân loại đa lớp, mở rộng từ Logistic Regression để áp dụng cho các bài toán có nhiều lớp.
+
+{{% /details %}}
+
+{{% details title="Softmax Regression khác gì so với Logistic Regression thông thường?" %}}
+
+Softmax Regression (hay còn gọi là Multinomial Logistic Regression) là một thuật toán học máy có giám sát dành cho các bài toán phân loại đa lớp, mở rộng từ Logistic Regression để áp dụng cho các bài toán có nhiều lớp.
+
+- **Logistic Regression**: Thích hợp cho bài toán phân loại nhị phân (2 lớp).
+- **Softmax Regression**: Tổng quát hóa để có thể xử lý các bài toán với nhiều hơn 2 lớp.
+  ![alt text](image-11.png)
+{{% /details %}}
+
+{{% details title="Tại sao cần dùng hàm Softmax?" %}}
+
+Hàm Softmax đảm bảo tổng xác suất của tất cả các lớp bằng 1, giúp chuyển đổi đầu ra của mô hình thành một phân phối xác suất trên các lớp, phù hợp cho bài toán phân loại.
+
+{{% /details %}}
+
+{{% details title="Làm thế nào để tối ưu hóa hàm Loss trong Softmax Regression?" %}}
+
+Trong Softmax Regression, ta tối ưu hóa hàm Loss bằng cách tính gradient của Loss đối với các tham số và cập nhật chúng qua thuật toán Gradient Descent:
+
+$$\theta_{t+1} = \theta_t - \eta \cdot \nabla_{\theta} L$$
+
+{{% /details %}}
+
+{{% details title="Các bước trong pipeline huấn luyện mô hình Softmax Regression là gì?" %}}
+
+Pipeline cơ bản của Softmax Regression bao gồm:
+
++ Tiền xử lý dữ liệu: chuẩn hóa và mã hóa dữ liệu.
++ Chia dữ liệu: tách thành các tập huấn luyện, xác minh và kiểm tra.
++ Huấn luyện mô hình: tính toán dự đoán, loss, gradient và cập nhật trọng số.
++ Đánh giá mô hình: kiểm tra hiệu suất trên tập kiểm tra và điều chỉnh tham số.
+{{% /details %}}
+
+{{% details title="One-hot encoding được sử dụng trong Softmax Regression như thế nào?" %}}
+
+One-hot encoding chuyển đổi nhãn lớp thành dạng vector, trong đó chỉ số tương ứng với lớp của nhãn có giá trị 1, còn các chỉ số khác là 0. Điều này giúp dễ dàng tính toán Cross-Entropy Loss khi so sánh với xác suất dự đoán.  
+
+{{% /details %}}
+
+
+{{% details title="Tại sao Softmax Regression được coi là một thuật toán đa lớp thay vì nhị phân?" %}}
+
+Softmax Regression là mở rộng của Logistic Regression cho các bài toán phân loại nhiều lớp. Trong Logistic Regression, mô hình tính xác suất cho hai lớp (nhị phân), nhưng với Softmax Regression, mô hình có thể xử lý nhiều lớp cùng lúc. Hàm Softmax tạo ra xác suất phân lớp cho từng lớp đầu ra bằng cách tính toán các giá trị đầu ra tuyến tính, sau đó chuẩn hóa chúng để đảm bảo tổng xác suất của tất cả các lớp bằng 1.  
+
+{{% /details %}}
+
+
+{{% details title="Trong bài toán phân loại nhiều lớp, Cross-Entropy Loss ảnh hưởng như thế nào đến kết quả dự đoán?" %}}
+
+Khi một lớp có xác suất dự đoán cao nhất nhưng không phải là lớp đúng, Cross-Entropy Loss sẽ trả về một giá trị loss lớn. Cross-Entropy đo lường khoảng cách giữa phân phối xác suất của mô hình và phân phối mục tiêu, nên nó phạt mạnh các dự đoán sai có độ tự tin cao. Điều này khuyến khích mô hình đưa ra dự đoán đúng với xác suất cao hơn.  
+
+{{% /details %}}
+
+
+{{% details title="Quy trình chuyển từ dữ liệu thô đến dự đoán trong Softmax Regression là gì?" %}}
+
+Quy trình trong Softmax Regression bao gồm:
+
+1. **Tiền xử lý dữ liệu**: chuẩn hóa và mã hóa dữ liệu đầu vào.  
+2. **Kết hợp tuyến tính**: tính toán giá trị đầu ra tuyến tính bằng trọng số và đặc trưng.  
+3. **Hàm Softmax**: chuyển đổi giá trị đầu ra thành xác suất.  
+4. **Dự đoán**: chọn lớp có xác suất cao nhất làm kết quả.  
+
+Nếu bỏ qua bất kỳ bước nào, ví dụ như chuẩn hóa, mô hình có thể không hội tụ hoặc đưa ra kết quả không chính xác.  
+
+{{% /details %}}
+
+
+{{% details title="Làm thế nào để xử lý khi một lớp dữ liệu xuất hiện nhiều hơn các lớp khác?" %}}
+
+Khi một lớp xuất hiện thường xuyên hơn các lớp khác, mô hình có thể bị lệch về lớp đó. Để khắc phục:
+
+- **Thêm trọng số lớp vào Loss**: giảm ảnh hưởng của lớp phổ biến.  
+- **Cân bằng dữ liệu**: sử dụng undersampling/oversampling để điều chỉnh số lượng mẫu giữa các lớp.  
+
+Điều này giúp mô hình học tốt hơn và giảm bias.  
+
+{{% /details %}}

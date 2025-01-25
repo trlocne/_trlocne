@@ -1,5 +1,5 @@
 ---
-title: Deep Learning
+title: Neural Network
 type: docs
 sidebar:
   open: true

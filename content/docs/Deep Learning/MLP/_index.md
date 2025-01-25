@@ -4,6 +4,8 @@ type: docs
 weight: 2
 sidebar:
   open: true
+math: true
+excludeSearch: true
 ---
 
 ## 1. Motivation

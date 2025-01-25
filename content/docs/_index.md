@@ -1,5 +1,6 @@
 ---
 title: Documentation
+excludeSearch: true
 ---
 
 ## Hello, World!

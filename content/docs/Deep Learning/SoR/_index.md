@@ -8,6 +8,7 @@ tags:
   - Softmax Regression
   - Deep Learning
 math: true
+excludeSearch: true
 ---
 
 ## 1. Introduction

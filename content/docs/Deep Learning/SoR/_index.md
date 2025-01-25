@@ -9,6 +9,7 @@ tags:
   - Deep Learning
 math: true
 excludeSearch: true
+comments: true
 ---
 
 ## 1. Introduction

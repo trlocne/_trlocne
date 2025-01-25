@@ -68,3 +68,14 @@ params:
     flexsearch:
       # index page by: content | summary | heading | title
       index: content
+
+    params:
+  comments:
+    enable: false
+    type: giscus
+
+    giscus:
+      repo: trlocne/_trlocne
+      repoId: R_kgDONuUkng
+      category: Q&A
+      categoryId: DIC_kwDONuUkns4CmRsu

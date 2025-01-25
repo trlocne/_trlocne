@@ -6,6 +6,7 @@ sidebar:
   open: true
 math: true
 excludeSearch: true
+comments: true
 ---
 
 Tiếp tục từ bài trước chúng ta sẽ tiếp tục tìm hiểu sâu hơn về Multi-layer Perceptron.

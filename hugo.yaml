@@ -79,3 +79,6 @@ params:
       repoId: R_kgDONuUkng
       category: Q&A
       categoryId: DIC_kwDONuUkns4CmRsu
+  blog:
+    list:
+      displayTags: true

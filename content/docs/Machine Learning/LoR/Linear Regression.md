@@ -9,6 +9,7 @@ tags:
 math: true
 excludeSearch: true
 comments: true
+password: "1234"
 ---
 
 

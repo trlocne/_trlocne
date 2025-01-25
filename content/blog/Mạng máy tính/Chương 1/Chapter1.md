@@ -1,4 +1,3 @@
-
 ---
 title: Chapter 1 Introduction
 date: 2025-01-24
@@ -6,14 +5,14 @@ authors:
   - name: tr.locne
     link: https://github.com/trlocne
     image: https://github.com/trlocne.png
-tags:
+tags: 
   - Mạng máy tính
-  - HCMUT
-  - HK242
+  - HK241
 math: true
+comments: true
 ---
 
-Môn học: Mạng máy tính - Trường đại học Bách Khoa TP.HCM.
+Chapter 1: Introduction
 <!--more-->
 
 ## 1. Computer Networks and the Internet

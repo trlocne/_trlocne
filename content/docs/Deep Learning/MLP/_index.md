@@ -384,43 +384,43 @@ Chứng minh được là càng thêm hidden layer thì càng tốt
 
 ## 7. Câu hỏi ôn tập
 
-{{% details title="Phạm vi giá trị của mỗi pixel trong ảnh xám là bao nhiêu?" %}}
+{{% details title="Phạm vi giá trị của mỗi pixel trong ảnh xám là bao nhiêu?" closed="true" %}}
 
 Phạm vi giá trị của mỗi pixel trong ảnh xám là từ 0 đến 255.
 
 {{% /details %}}
 
-{{% details title="Trong ảnh màu, mỗi pixel bao gồm những giá trị nào?" %}}
+{{% details title="Trong ảnh màu, mỗi pixel bao gồm những giá trị nào?" closed="true" %}}
 
 Mỗi pixel trong ảnh màu bao gồm ba giá trị: đỏ, xanh lá, và xanh dương (RGB).
 
 {{% /details %}}
 
-{{% details title="Thư viện nào được sử dụng để tải xuống một file từ cloud?" %}}
+{{% details title="Thư viện nào được sử dụng để tải xuống một file từ cloud?" closed="true" %}}
 
 Thư viện `urllib.request`.
 
 {{% /details %}}
 
-{{% details title="Lệnh nào được sử dụng để hiển thị một hình ảnh đã mở bằng matplotlib?" %}}
+{{% details title="Lệnh nào được sử dụng để hiển thị một hình ảnh đã mở bằng matplotlib?" closed="true" %}}
 
 Lệnh `plt.imshow(img)`
 
 {{% /details %}}
 
-{{% details title="Hàm transforms.ToTensor() có chức năng gì trong PyTorch?" %}}
+{{% details title="Hàm transforms.ToTensor() có chức năng gì trong PyTorch?" closed="true" %}}
 
 Hàm `transforms.ToTensor()` dùng để chuyển đổi ảnh từ định dạng PIL sang tensor để xử lý trong PyTorch.
 
 {{% /details %}}
 
-{{% details title="DataLoader được sử dụng để làm gì trong quá trình huấn luyện mô hình?" %}}
+{{% details title="DataLoader được sử dụng để làm gì trong quá trình huấn luyện mô hình?" closed="true" %}}
 
 `DataLoader` giúp chia dữ liệu thành các batch và hỗ trợ việc xáo trộn dữ liệu, tải song song để tăng tốc độ huấn luyện.
 
 {{% /details %}}
 
-{{% details title="Tại sao sử dụng thư viện python tải MNIST dataset cần phải bỏ 8 byte đầu đối với tệp label và 16 byte đối với tệp ảnh" %}}
+{{% details title="Tại sao sử dụng thư viện python tải MNIST dataset cần phải bỏ 8 byte đầu đối với tệp label và 16 byte đối với tệp ảnh" closed="true" %}}
 
 Bởi vì 8 byte đầu lưu những thông tin cơ bản có thể lược bỏ, không cần thiết cho quá trình training như:
 
@@ -430,31 +430,31 @@ Bởi vì 8 byte đầu lưu những thông tin cơ bản có thể lược bỏ
 
 {{% /details %}}
 
-{{% details title="Tại sao chia dữ liệu thành các batch quan trọng?" %}}
+{{% details title="Tại sao chia dữ liệu thành các batch quan trọng?" closed="true" %}}
 
 Giúp tối ưu hóa hiệu suất tính toán, giảm nhiễu trong gradient descent, và phù hợp với giới hạn bộ nhớ phần cứng.
 
 {{% /details %}}
 
-{{% details title="transforms.Compose trong đoạn code có chức năng gì" %}}
+{{% details title="transforms.Compose trong đoạn code có chức năng gì" closed="true" %}}
 
 Kết hợp nhiều bước tiền xử lý (như `ToTensor`) vào một pipeline để áp dụng tuần tự lên dữ liệu.
 
 {{% /details %}}
 
-{{% details title="transforms.ToTensor() chuyển đổi dữ liệu như thế nào" %}}
+{{% details title="transforms.ToTensor() chuyển đổi dữ liệu như thế nào" closed="true" %}}
 
 Chuyển dữ liệu hình ảnh từ định dạng PIL hoặc NumPy thành tensor và chuẩn hóa giá trị pixel về khoảng [0, 1]
 
 {{% /details %}}
 
-{{% details title="Tại sao cần flatten dữ liệu ảnh trước khi đưa vào mô hình" %}}
+{{% details title="Tại sao cần flatten dữ liệu ảnh trước khi đưa vào mô hình" closed="true" %}}
 
 Bởi vì những thuật toán cổ điển đến thời điểm học hiện tại là MLP chỉ xử lý được dữ liệu ở 1D.
 
 {{% /details %}}
 
-{{% details title="Tại sao việc không sử dụng normalization lại ảnh hưởng đến quá trình huấn luyện mô hình?" %}}
+{{% details title="Tại sao việc không sử dụng normalization lại ảnh hưởng đến quá trình huấn luyện mô hình?" closed="true" %}}
 
 Khi không sử dụng normalization, các feature có độ lớn khác nhau sẽ gây ra các gradient có độ lớn không đồng nhất. Điều này làm cho step-size khi cập nhật trọng số (weights) không đồng đều, dẫn đến việc tối ưu không hiệu quả và có thể khiến quá trình học gặp khó khăn hoặc không hội tụ.
 
@@ -464,25 +464,25 @@ Ví dụ: Feature lớn sẽ tạo ra gradient lớn, làm biến động mạnh
 
 {{% /details %}}
 
-{{% details title="Giải pháp nào được đề xuất để giảm thiểu vấn đề khi không áp dụng normalization?" %}}
+{{% details title="Giải pháp nào được đề xuất để giảm thiểu vấn đề khi không áp dụng normalization?" closed="true" %}}
 
 Giảm learning rate (LR) để tránh gradient lớn gây ảnh hưởng mạnh, giúp mô hình ổn định hơn khi huấn luyện.
 
 {{% /details %}}
 
-{{% details title="Nếu áp dụng normalization rồi thì cần giảm Lr nữa không?" %}}
+{{% details title="Nếu áp dụng normalization rồi thì cần giảm Lr nữa không?" closed="true" %}}
 
 Không cần giảm nữa, nếu giảm cả 2 thì Gradient sẽ rất nhỏ (gần bằng 0) khiến tham số không cập nhật.
 
 {{% /details %}}
 
-{{% details title="Trong PyTorch, transforms.Normalize((mean,), (std,)) hoạt động như thế nào và tại sao cần dùng nó?" %}}
+{{% details title="Trong PyTorch, transforms.Normalize((mean,), (std,)) hoạt động như thế nào và tại sao cần dùng nó?" closed="true" %}}
 
 `transforms.Normalize` chuẩn hóa mỗi pixel bằng cách trừ mean và chia std để dữ liệu có phân phối chuẩn, giúp mô hình học ổn định hơn.
 
 {{% /details %}}
 
-{{% details title="Dựa vào ảnh, nối phương pháp chuẩn hóa với tên tương ứng" %}}
+{{% details title="Dựa vào ảnh, nối phương pháp chuẩn hóa với tên tương ứng" closed="true" %}}
 
 ![alt text](image-40.png)
 
@@ -490,13 +490,13 @@ Không cần giảm nữa, nếu giảm cả 2 thì Gradient sẽ rất nhỏ (g
 
 {{% /details %}}
 
-{{% details title="Tại sao việc thêm nhiều tham số hoặc hidden layers lại giúp mô hình MLP xử lý tốt hơn các mối quan hệ giữa các feature?" %}}
+{{% details title="Tại sao việc thêm nhiều tham số hoặc hidden layers lại giúp mô hình MLP xử lý tốt hơn các mối quan hệ giữa các feature?" closed="true" %}}
 
 Thêm tham số hoặc hidden layers tăng khả năng học các mối quan hệ phức tạp giữa các feature, cải thiện năng lực biểu diễn của mô hình.
 
 {{% /details %}}
 
-{{% details title="Tại sao lại phải thêm tham số ở layer giữa mà không phải ở hai đầu?" %}}
+{{% details title="Tại sao lại phải thêm tham số ở layer giữa mà không phải ở hai đầu?" closed="true" %}}
 
 Bởi vì 2 đầu là inputs và outputs được quy định và fix cứng bởi bài toán, mình không thể tự ý thêm được. Nên chỉ còn cách là thêm ở giữa.
 

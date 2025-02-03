@@ -30,13 +30,13 @@
 
     <!-- Sidebar on large screen -->
     {{- if $disableSidebar -}}
-    {{- if $displayPlaceholder }}<div class="max-xl:hx-hidden hx-h-0 hx-w-64 hx-shrink-0"></div>{{ end -}}
-    {{ .context.Scratch.Set "enableFooterSwitches" true }}
+      {{- if $displayPlaceholder }}<div class="max-xl:hx-hidden hx-h-0 hx-w-64 hx-shrink-0"></div>{{ end -}}
+      {{ .context.Scratch.Set "enableFooterSwitches" true }}
     {{- else -}}
-    <ul class="hx-flex hx-flex-col hx-gap-1 max-md:hx-hidden">
-      {{ template "sidebar-main" (dict "context" $navRoot "page" $context  "pageURL" $pageURL) }}
-      {{ template "sidebar-footer" }}
-    </ul>
+      <ul class="hx-flex hx-flex-col hx-gap-1 max-md:hx-hidden">
+        {{ template "sidebar-main" (dict "context" $navRoot "page" $context  "pageURL" $pageURL) }}
+        {{ template "sidebar-footer" }}
+      </ul>
     {{ end -}}
   </div>
   {{/* Hide theme switch when sidebar is disabled */}}

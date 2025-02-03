@@ -1,6 +1,7 @@
 ---
 title: "Mạng máy tính"
 password: "1234"
+type: blogs
 ---
 
 <div style="text-align: center; margin-top: 1em;">

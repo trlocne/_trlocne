@@ -10,6 +10,7 @@ tags:
   - HK241
 math: true
 comments: true
+blog: true
 ---
 
 Chapter 1: Introduction

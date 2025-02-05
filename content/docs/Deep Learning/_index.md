@@ -1,8 +1,7 @@
 ---
 title: Neural Network
 type: docs
-sidebar:
-  open: true
+weight: 2
 ---
 
 Take note của @trlocne về Deep Learning.

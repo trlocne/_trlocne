@@ -5,7 +5,6 @@ weight: 3
 sidebar:
   open: true
 math: true
-excludeSearch: true
 comments: true
 ---
 

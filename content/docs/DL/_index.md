@@ -1,4 +1,4 @@
 ---
 title: Deep Learning
-excludeSearch: true
+weight: 3
 ---

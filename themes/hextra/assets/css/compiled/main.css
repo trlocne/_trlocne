@@ -2630,7 +2630,7 @@ nav .search-wrapper {
   font-size: .75rem;
 }
 .hextra-jupyter-code-cell .hextra-jupyter-code-cell-outputs-container .hextra-jupyter-code-cell-outputs {
-  max-height: 50vh;
+  max-height: 70vh;
   overflow: auto;
 }
 .hextra-jupyter-code-cell .hextra-jupyter-code-cell-outputs-container .hextra-jupyter-code-cell-outputs pre {

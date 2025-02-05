@@ -7,9 +7,9 @@ sidebar:
 tags:
   - Model Initialization
 math: true
-excludeSearch: true
 comments: true
 password: 'aio2024'
+blog: true
 ---
 
 ## 1. Motivation

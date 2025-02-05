@@ -2,17 +2,53 @@
   <div class='hx-mx-auto hx-flex {{ partial "utils/page-width" . }}'>
     {{ partial "sidebar.html" (dict "context" .) }}
     {{ partial "toc.html" . }}
-    <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
-      <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
-        {{ partial "breadcrumb.html" . }}
-        <div class="content">
-          {{ if .Title }}<h1>{{ .Title }}</h1>{{ end }}
-          {{ .Content }}
-        </div>
-        {{ partial "components/last-updated.html" . }}
-        {{ partial "components/pager.html" . }}
-        {{ partial "components/comments.html" . }}
-      </main>
-    </article>
+    {{ if .Params.blog }}
+      <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+        <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12" {{- if .Params.password -}}style="display: none;"{{- end -}} id="content-container" >
+          {{ partial "breadcrumb.html" . }}
+          <div class="content">
+            {{ if .Title }}<h1>{{ .Title }}</h1>{{ end }}
+            {{ .Content }}
+          </div>
+          {{ partial "components/last-updated.html" . }}
+          {{ partial "components/pager.html" . }}
+          {{ partial "components/comments.html" . }}
+        </main>
+      </article>
+    {{ else }}
+      <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+        <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
+          {{ partial "breadcrumb.html" . }}
+          <div class="content">
+            {{ if .Title }}<h1>{{ .Title }}</h1>{{ end }}
+            {{ .Content }}
+          </div>
+          {{ partial "components/last-updated.html" . }}
+          {{ partial "components/pager.html" . }}
+          {{ partial "components/comments.html" . }}
+        </main>
+      </article>
+    {{ end }}
   </div>
+  <script>
+    window.onload = function() {
+      var contentContainer = document.getElementById("content-container");
+      var blogKey = "pwd_" + "{{ .Permalink }}";
+      var storedPwd = localStorage.getItem(blogKey);
+
+      if (storedPwd === "_{{ .Params.password }}") {
+        contentContainer.style.display = "block";
+      } else if ("{{ .Params.password }}" !== "") {
+        var pwd = prompt("Enter password:");
+        if (pwd === "_{{ .Params.password }}") {
+          contentContainer.style.display = "block";
+          localStorage.setItem(blogKey, pwd);
+        } else {
+          alert("Incorrect password");
+        }
+      } else {
+        contentContainer.style.display = "block";
+      }
+    };
+  </script>
 {{ end }}

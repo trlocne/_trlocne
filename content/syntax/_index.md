@@ -1,6 +1,5 @@
 ---
 title: Syntax
-excludeSearch: true
 password: "1234"
 ---
 

@@ -1,8 +1,7 @@
 ---
 title: Machine Learning
 type: docs
-sidebar:
-  open: true
+weight: 1
 ---
 
 Takenote của @trlocne về Machine Learning.

@@ -9,9 +9,9 @@ tags:
   - MLP
   - Deep Learning
 math: true
-excludeSearch: true
 comments: true
 password: 1234
+blog: true
 ---
 
 ## 1. Motivation

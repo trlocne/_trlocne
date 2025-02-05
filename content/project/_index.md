@@ -3,7 +3,6 @@ title: Project
 description: "Open source projects powered by @trlocne"
 toc: false
 layout: wide
-excludeSearch: true
 ---
 
 <div class="hx-mt-4"></div>

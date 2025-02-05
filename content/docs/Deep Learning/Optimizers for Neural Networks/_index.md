@@ -7,7 +7,6 @@ sidebar:
 tags:
   - Model Initialization
 math: true
-excludeSearch: true
 comments: true
 ---
 

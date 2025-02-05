@@ -7,9 +7,9 @@ sidebar:
 tags:
     - Linear Regression
 math: true
-excludeSearch: true
 comments: true
 password: "1234"
+blog: true
 ---
 
 

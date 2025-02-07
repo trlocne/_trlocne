@@ -11,6 +11,7 @@ tags:
 math: true
 comments: true
 blog: true
+weight: 1
 ---
 
 Chapter 1: Introduction

@@ -3039,7 +3039,7 @@ body:is(html[class~="dark"] *) {
 }
 .dark\:hx-bg-neutral-800:is(html[class~="dark"] *) {
   --tw-bg-opacity: 1;
-  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
+  background-color: #2727274a;
 }
 .dark\:hx-bg-neutral-900:is(html[class~="dark"] *) {
   --tw-bg-opacity: 1;

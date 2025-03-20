@@ -71,9 +71,19 @@
   {{- $pageURL := .page.RelPermalink -}}
   {{- $level := .level -}}
   {{- $toc := .toc | default false -}}
+  {{- $currentIdTree := $page.Params.idtree -}}  {{/* Get idtree from current page */}}
+
 
   {{- with $items := union .context.RegularPages .context.Sections -}}
+    {{/* Filter based on idtree */}}
+    {{- if $currentIdTree -}}
+      {{- $items = where $items "Params.idtree" "eq" $currentIdTree -}}
+    {{- end -}}
+    
+    {{/* Then apply other filters */}}
+    {{- $items = where $items "Params.type" "!=" "blogs" -}}
     {{- $items = where $items "Params.sidebar.exclude" "!=" true -}}
+    
     {{- if eq $level 0 -}}
       {{- range $items.ByWeight }}
         {{- if .Params.sidebar.separator -}}

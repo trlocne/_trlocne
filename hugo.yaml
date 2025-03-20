@@ -58,9 +58,6 @@ params:
     displayCopyright: false
     displayPoweredBy: false
 
-  # editURL:
-  #   enable: true
-  #   base: "https://github.com/team-firedreamer/causality-docs/edit/main/content"
   search:
     enable: true
     type: flexsearch

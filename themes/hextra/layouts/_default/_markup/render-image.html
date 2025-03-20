@@ -9,19 +9,58 @@
 
 {{- if and $dest $isLocal -}}
   {{- if $startsWithSlash -}}
-    {{/* Images under static directory */}}
+    {{/* Ảnh nằm trong thư mục static */}}
     {{- $dest = (relURL (strings.TrimPrefix "/" $dest)) -}}
   {{- else if and $isPage (not $startsWithRelative) -}}
-    {{/* Images that are sibling to the individual page file */}}
+    {{/* Ảnh cùng cấp với file page */}}
     {{ $dest = (printf "../%s" $dest) }}
   {{- end -}}
 {{- end -}}
 
 {{- with .Title -}}
   <figure>
-    <img src="{{ $dest | safeURL }}" title="{{ . }}" alt="{{ $alt }}" {{ if $lazyLoading }}loading="lazy"{{ end }} />
+    <a href="{{ $dest | safeURL }}" onclick="openImageModal('{{ $dest | safeURL }}'); return false;" style="cursor: pointer;">
+      <img src="{{ $dest | safeURL }}" title="{{ . }}" alt="{{ $alt }}" {{ if $lazyLoading }}loading="lazy"{{ end }} />
+    </a>
     <figcaption>{{ . }}</figcaption>
   </figure>
 {{- else -}}
-  <img src="{{ $dest | safeURL }}" alt="{{ $alt }}" {{ if $lazyLoading }}loading="lazy"{{ end }} />
+  <a href="{{ $dest | safeURL }}" onclick="openImageModal('{{ $dest | safeURL }}'); return false;" style="cursor: pointer;">
+    <img src="{{ $dest | safeURL }}" alt="{{ $alt }}" {{ if $lazyLoading }}loading="lazy"{{ end }} />
+  </a>
 {{- end -}}
+
+<script>
+  function openImageModal(src) {
+    // Kiểm tra xem modal đã tồn tại hay chưa
+    let modal = document.getElementById('image-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'image-modal';
+      modal.style.position = 'fixed';
+      modal.style.top = '0';
+      modal.style.left = '0';
+      modal.style.width = '100%';
+      modal.style.height = '100%';
+      modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
+      modal.style.display = 'flex';
+      modal.style.alignItems = 'center';
+      modal.style.justifyContent = 'center';
+      modal.style.cursor = 'pointer';
+      // Ẩn modal khi click vào bất kỳ đâu
+      modal.onclick = function() { modal.style.display = 'none'; };
+      
+      let img = document.createElement('img');
+      img.id = 'modal-image';
+      img.style.maxWidth = '90%';
+      img.style.maxHeight = '90%';
+      modal.appendChild(img);
+      document.body.appendChild(modal);
+    }
+    
+    // Cập nhật nguồn ảnh và hiển thị modal
+    let modalImage = document.getElementById('modal-image');
+    modalImage.src = src;
+    modal.style.display = 'flex';
+  }
+</script>

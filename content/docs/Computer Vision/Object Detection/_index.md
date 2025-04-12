@@ -909,6 +909,10 @@ Giả sử ta crop được hình ảnh người đàn ông như bức hình bê
 
 ![alt text](image-56.png)
 
+3.  Chia ảnh thành các ô nhỏ (cells). Thường kích thước mỗi ô là 8x8 pixels.
+
+Trong mỗi cell, xây dựng histogram 9 bins theo hướng gradient (từ 0° đến 180°, hoặc 0° đến 360° tùy chọn).
+
 {{% /details %}}
 
 >[!NOTE]

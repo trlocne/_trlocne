@@ -527,6 +527,7 @@ Nhược điểm : Vì Overfeats có liên quan đến Image Pyramid nên vẫn 
 Ở phần Introduction , chúng ta đã tìm hiểu về lý do tại sao Selective search bị thay thế bởi RPN, ở phần này chúng ta sẽ đi sâu hơn vào RPN
 
 {{% details title="Absolute vs Relative BBOX Regression" closed="true" %}}
+
 **Review: Ideas for Localization using ConvNets**
 ---
 Absolute bounding box regression:
@@ -617,8 +618,6 @@ Trong bước 2, quá trình huấn luyện chỉ cập nhật tham số của F
 
     ![alt text](image-59.png)
 {{% /details %}}
-
-
 
 ## Resource
 
